@@ -122,9 +122,9 @@ async function main() {
             duracao_min: 60
         });
 
-        console.log("🚀 Sincronização de dados finalizada com sucesso.");
+        console.log("Sincronização de dados finalizada com sucesso.");
 
-        // --- RELATÓRIOS (AGGREGATION FRAMEWORK) ---
+        // RELATÓRIOS (AGGREGATION FRAMEWORK)
 
         // Relatório 1: Junção de coleções ($lookup + $unwind)
         console.log("Histórico de Atividades (Junção de Coleções)");
