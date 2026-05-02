@@ -1,0 +1,24 @@
+{
+  "name": "treino-mongodb",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido para a disciplina de Banco de Dados NoSQL (PUC Minas).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaiqueMAraujo/treino-mongodb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KaiqueMAraujo/treino-mongodb/issues"
+  },
+  "homepage": "https://github.com/KaiqueMAraujo/treino-mongodb#readme",
+  "dependencies": {
+    "mongodb": "^7.2.0"
+  }
+}
