@@ -13,11 +13,11 @@ Projeto desenvolvido em C# utilizando MongoDB para gerenciamento de usuários, t
 - Visual Studio
 
 ## Funcionalidades
-- Cadastro de usuários
-- Cadastro de treinos
-- Registro de atividades
-- Relatórios com Aggregation
-- Uso de $push, $inc e $lookup
+- **Gestão de Alunos:** Cadastro e consulta de usuários diretamente no MongoDB.
+- **Log de Treinos:** Registro de atividades físicas com persistência de dados.
+- **Relatórios Avançados:** Utilização de pipelines de agregação (`$lookup`, `$facet`, `$match`) para gerar estatísticas de treino.
+- **Manipulação de Dados:** Uso de operadores como `$push`, `$inc` e `$lookup` para gerenciamento eficiente de subdocumentos e referências.
+
 ---
 
 ## Integrantes
