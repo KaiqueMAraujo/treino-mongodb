@@ -1,10 +1,10 @@
-TREINO_DB - Sistema de Academia com MongoDB
+## TREINO_DB - Sistema de Academia com MongoDB
 
 Projeto desenvolvido em C# utilizando MongoDB para gerenciamento de usuários, treinos e registros de atividades físicas.
 
 ---
 
-# Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - C#
 - .NET
