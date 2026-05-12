@@ -20,29 +20,24 @@ namespace treino.Services
             _context = context;
         }
 
-        public void InserirTreinos(
-            List<Treino> treinos
-        )
+       public void InserirTreinos(List<Treino> treinos)
         {
             foreach (var treino in treinos)
             {
-                var filter =
-                    Builders<Treino>.Filter
-                    .Eq(
-                        t => t.Nome,
-                        treino.Nome
-                    );
+                var filtro = Builders<Treino>.Filter.Eq(t => t.Nome, treino.Nome);
 
-                _context.Treinos.ReplaceOne(
-                    filter,
-                    treino,
+                var update = Builders<Treino>.Update
+                .Set(t => t.Nome, treino.Nome)
+                .Set(t => t.Exercicios, treino.Exercicios);
 
-                    new ReplaceOptions
-                    {
-                        IsUpsert = true
-                    }
-                );
-            }
+                 _context.Treinos.UpdateOne(
+                filtro,
+                update,
+                new UpdateOptions { IsUpsert = true }
+            );
+        }
+
+        Console.WriteLine("Processamento de treinos concluído!");
         }
 
         // $push
