@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using treino.Data;
 using treino.Models;
-using treino.Services;
+using treino.Service;
 
 namespace treino
 {
@@ -78,19 +79,30 @@ namespace treino
             {
                 new Usuario { Nome = "Daniel", Email = "daniel@gmail.com", Idade = 20,
                     Perfil = new Perfil { Peso = 72, Altura = 1.77, Objetivo = "Hipertrofia", TotalTreinos = 0 }},
-                new Usuario { Nome = "Ana", Email = "ana@gmail.com", Idade = 19,
-                    Perfil = new Perfil { Peso = 58, Altura = 1.65, Objetivo = "Condicionamento", TotalTreinos = 0 }}
+                new Usuario { Nome = "Ana Clara", Email = "ana@gmail.com", Idade = 25,
+                   Perfil = new Perfil { Peso = 58, Altura = 1.65, Objetivo = "Condicionamento", TotalTreinos = 0 }},
+                new Usuario { Nome = "Pam Adrielly", Email = "pam@gmail.com", Idade = 19,
+                   Perfil = new Perfil { Peso = 60, Altura = 1.60, Objetivo = "Ganho de Massa", TotalTreinos = 0 }},
+                new Usuario { Nome = "Marcos Oliveira", Email = "marcos@gmail.com", Idade = 42  ,
+                   Perfil = new Perfil { Peso = 95, Altura = 1.95, Objetivo = "Emagrecimento", TotalTreinos = 0 }}
             };
             usuarioService.InserirUsuarios(listaPadrao);
 
             // 2. Operações de Treino ($push para manipulação de listas)
             var treinos = new List<Treino> {
                 new Treino { Nome = "Treino A", Exercicios = new List<Exercicio> {
-                    new Exercicio { Nome = "Supino", Series = 4, Repeticoes = 12 }
-                }}
+                    new Exercicio { Nome = "Supino", Series = 4, Repeticoes = 12 },
+                    new Exercicio { Nome = "Crucifixo", Series = 3, Repeticoes = 10 },
+                    new Exercicio { Nome = "Flexão", Series = 3, Repeticoes = 15 },
+                }},
+                new Treino { Nome = "Treino B", Exercicios = new List<Exercicio> {
+                    new Exercicio { Nome = "Agachamento ", Series = 4, Repeticoes = 10 },
+                    new Exercicio { Nome = "Leg Press", Series = 3, Repeticoes = 12 },
+                    new Exercicio { Nome = "Panturrilha", Series = 4, Repeticoes = 20 }
+                }},
             };
             treinoService.InserirTreinos(treinos);
-            treinoService.AdicionarExercicio("Treino A", new Exercicio { Nome = "Flexão", Series = 3, Repeticoes = 15 });
+            treinoService.AdicionarExercicio("Treino A", new Exercicio { Nome = "Agachamento Frontal", Series = 3, Repeticoes = 15 });
 
             // 3. Registro e Atualização ($inc para contagem de treinos)
             var usuario = usuarioService.BuscarPorEmail("daniel@gmail.com");
